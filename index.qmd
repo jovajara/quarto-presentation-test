@@ -1,0 +1,85 @@
+---
+title: "Título de tu Investigación"
+subtitle: "Subtítulo o Curso"
+author: "Tu Nombre"
+institute: "Universidad de Valparaíso"
+date: last-modified
+date-format: "D/M/YYYY"
+format:
+  revealjs:
+    theme: default        # Opciones: beige, blood, moon, night, serif, simple, solarized
+    transition: slide    # Animación entre slides
+    slide-number: true  # Vital para que te hagan preguntas: "En la diapo 4..."
+    show-slide-number: all
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_UV_cl.png" # Logo opcional
+    
+    # Configuración de MathJax para renderizado profesional
+    html-math-method: mathjax 
+    
+    embed-resources: true
+    self-contained-math: true
+    execute:
+      eval: false
+---
+
+## Introducción
+
+Aquí puedes poner los puntos clave de tu presentación.
+
+-   Primer punto importante
+-   Segundo punto
+-   Tercer punto con **énfasis**
+
+::: {.notes}
+Estas son notas para el orador. Solo tú las ves si presionas la tecla 'S' durante la presentación.
+:::
+
+---
+
+## Ecuaciones Matemáticas
+
+Quarto usa la sintaxis estándar de LaTeX (`$..$` y `$$..$$`).
+
+La ecuación de Schrödinger dependiente del tiempo:
+
+$$i\hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t)$$
+
+También funciona en línea: Sea $\epsilon > 0$ un número real...
+
+---
+
+## Diseño a Dos Columnas
+
+Muy útil para poner una imagen/gráfico a un lado y la explicación al otro.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### El Modelo
+Aquí explicas la teoría.
+
+1. Asumimos vacío.
+2. Métrica de Schwarzschild.
+:::
+
+::: {.column width="50%"}
+![Descripción de la imagen](https://placehold.co/400x300/333/FFF.png?text=Grafico+Aqui)
+:::
+
+::::
+
+---
+
+## Mostrando Código (C/CUDA)
+
+Como te interesa la física computacional, así se ve el código con resaltado de sintaxis:
+
+```c
+// Ejemplo de kernel CUDA
+__global__ void saxpy(int n, float a, float *x, float *y)
+{
+  int i = blockIdx.x * blockDim.x + threadIdx.x;
+  if (i < n) 
+    y[i] = a * x[i] + y[i];
+}
+```
