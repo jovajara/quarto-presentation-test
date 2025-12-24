@@ -1,7 +1,7 @@
 ---
-title: "Título de tu Investigación"
-subtitle: "Subtítulo o Curso"
-author: "Tu Nombre"
+title: "Probando presentaciones html con quarto"
+subtitle: "o algo asi"
+author: "Jovanny Jara"
 institute: "Universidad de Valparaíso"
 date: last-modified
 date-format: "D/M/YYYY"
@@ -11,7 +11,7 @@ format:
     transition: slide    # Animación entre slides
     slide-number: true  # Vital para que te hagan preguntas: "En la diapo 4..."
     show-slide-number: all
-    logo: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_UV_cl.png" # Logo opcional
+    logo: "https://www.pngall.com/wp-content/uploads/16/Thumbs-Up-Like-PNG-Clipart-thumb.png" # Logo opcional
     
     # Configuración de MathJax para renderizado profesional
     html-math-method: mathjax 
@@ -22,16 +22,18 @@ format:
       eval: false
 ---
 
-## Introducción
+## Una slide
 
-Aquí puedes poner los puntos clave de tu presentación.
+Creo que se ve bien, a ver una lista
 
--   Primer punto importante
--   Segundo punto
--   Tercer punto con **énfasis**
+-   Un punto
+-   otro
+-   otro mas con **énfasis**
+-   se me olvido markdown, creo que esto eran __italicas__
+-   o eran ***asi***?
 
 ::: {.notes}
-Estas son notas para el orador. Solo tú las ves si presionas la tecla 'S' durante la presentación.
+ya notas pal orador, que deberían pasarse a la otra diapo si las pego, a ver
 :::
 
 ---
@@ -45,6 +47,20 @@ La ecuación de Schrödinger dependiente del tiempo:
 $$i\hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t)$$
 
 También funciona en línea: Sea $\epsilon > 0$ un número real...
+
+Y debería funcionar como latex común no? si hago 
+\[
+
+H = \sum_i p_i \dot{q}_i - L(q,\dot{q},t)
+
+\]
+
+Y si todo fue bien, tenemos la definición del hamiltoniano arriba.
+
+::: {.notes}
+ya notas pal orador, que deberían pasarse a la otra diapo si las pego, a ver
+yaaa si funconó god
+:::
 
 ---
 
