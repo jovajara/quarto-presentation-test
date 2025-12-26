@@ -2,7 +2,6 @@
 title: "Presentaciones en Reveal.js con Quarto y GitHub Pages"
 subtitle: "y como hacer que se suban solas con GitHub Actions"
 author: "Jovanny Jara"
-institute: "Universidad de Valparaíso"
 date: last-modified
 date-format: "D/M/YYYY"
 format:
@@ -52,7 +51,7 @@ Una vez teniendo todo listo, debes hacer lo siguiente
 
 ---
 
-## Qué hacemos
+## Qué hacemos {.smaller}
 
 - Sube los contenidos a tu repo haciendo 
 
