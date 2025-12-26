@@ -14,7 +14,9 @@ format:
     
     controls: true
     controls-layout: edges
-    html-math-method: mathjax 
+    html-math-method: mathjax
+    width: 1920
+    height: 1080 
     
     embed-resources: true
     self-contained-math: true
@@ -51,7 +53,7 @@ Una vez teniendo todo listo, debes hacer lo siguiente
 
 ---
 
-## Qué hacemos {.smaller}
+## Qué hacemos
 
 - Sube los contenidos a tu repo haciendo 
 
@@ -70,7 +72,7 @@ El link debería ser `https://tu-usuario.github.io/link-de-tu-repo/`, pero tambi
 
 ---
 
-## Ahora qué {.smaller}
+## Ahora qué
 
 Ahora sólo debes editar el archivo `index.qmd` ya que éste guarda tu presentación.
 
