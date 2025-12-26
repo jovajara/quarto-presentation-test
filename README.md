@@ -1,1 +1,69 @@
-# quarto-presentation-test
+# Quarto Presentation Test
+
+Este repositorio contiene una presentación de Reveal.js creada con Quarto que incluye un tutorial para subir presentaciones a una página de GitHub Pages y automatizar el proceso mediante GitHub Actions.
+
+---
+## ¿Cuál es la gracia?
+
+Quarto nos deja crear (entre muchas otras cosas) presentaciones como [ésta](https://jovajara.github.io/quarto-presentation-test/) que utilizan [Reveal.js](https://revealjs.com) y que se pueden ver desde el navegador sin la necesidad de saber HTML. Solo necesitamos conocer Markdown (y algo de YAML pero en los docs está todo).
+
+---
+
+## Pre-requisitos
+
+El tutorial está pensado para trabajar con la terminal y un editor de texto, aunque hice todo esto con vscode.
+
+Qué necesitas:
+
+- Tener instalado [Quarto](https://quarto.org/docs/get-started/) en el sistema
+- Clonar [este repositorio](https://github.com/jovajara/quarto-presentation-test) usando `git clone <link del repo>` en la terminal (sólo para tener todo a mano)
+- Crear un repositorio nuevo en GitHub y clonarlo
+
+Si ya tienes un repositorio donde solo quieras incluir una presentación, igualmente crea uno nuevo solo para testear que todo funciona bien y luego haz todo en el tuyo.
+
+---
+
+## Qué hacemos
+
+Una vez teniendo todo listo, debes hacer lo siguiente
+
+- Copia los contenidos de este repo sin `README.md` y `.nojekyll` en la carpeta de tu repo (si ya tienes un `.gitignore` sólo incluye las líneas de éste)
+- Prepara tu repositorio para poder publicar tus presentaciones usando `quarto publish gh-pages index.qmd` en la terminal, luego `y` o `yes`. Esto crea una página con esta presentación en tu repositorio. 
+- Sube los contenidos a tu repo haciendo 
+
+```bash
+# añadimos la carpeta .github y los archivos .nojekyll e index.qmd al stage
+git add .
+# hacemos commit de los cambios
+git commit -m "Mensaje del commit" -m "Cuerpo del mensaje (opcional)"
+# subimos al remoto
+git push origin main
+```
+
+Si todo sale bien el push debió volver a generar la página con esta presentación mediante una GitHub Action presente en `.github/workflows/publish.yml`. 
+
+El link debería ser `https://tu-usuario.github.io/link-de-tu-repo/`, pero tambien puedes abrir la página de tu repo y hacer clic en la tuerca a la derecha de About y luego marcar la opcion "Use your GitHub Pages website" para tenerla siempre a la mano.
+
+---
+
+## Ahora qué
+
+Ahora sólo debes editar el archivo `index.qmd` ya que éste guarda tu presentación.
+
+Lo importante es editar el cuerpo (desde `## ¿Cuál es la gracia?` en adelante). Lo que va antes de esto es la cabecera, que configura el título de la presentación y las propiedades de la presentación usando YAML. Puedes saber mas de todo esto mirando los [tutoriales](https://quarto.org/docs/get-started/hello/text-editor.html) o la [documentación](https://quarto.org/docs/guide/).
+
+Si quieres ver como va tu presentación mientras la editas, puedes usar `quarto preview ./index.qmd`. Esto abrirá una ventana del navegador donde podrás verla y debería actualizarse a tiempo real si haces cambios.
+
+Si quieres subir estos cambios a tu página, solo debes subirlos a tu repo, de la misma forma que hicimos antes con `git add .`, etc. Igualmente puedes volver a usar `quarto publish gh-pages index.qmd` (técnicamente así es mas corto), pero los cambios que hagas a `index.qmd` no se verán reflejados en el repositorio. Si no te interesa mantener estos cambios puedes no subirlos.
+
+Una vez que hayas subido los cambios, luego de unos cuántos segundos tu página se actualizará con los cambios que hayas hecho.
+
+---
+
+## Qué más
+
+Quarto es una herramienta muy poderosa, pero por ahora sólo la estamos usando para hacer presentaciones. Incluso hay muchas cosas sobre Reveal.js que no hemos visto. Lo importante es, si es que no sabes mucho de Markdown, partir mirando [lo básico de Markdown en Quarto](https://quarto.org/docs/authoring/markdown-basics.html) y luego [lo básico de reveal.js](https://quarto.org/docs/presentations/revealjs/). 
+
+Luego puedes ver otras cosas como [temas](https://quarto.org/docs/presentations/revealjs/themes.html) o [cosas más avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html).
+
+Espero que te haya servido.
