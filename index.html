@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Jovanny Jara">
-  <title>Probando presentaciones html con quarto</title>
+  <title>Presentaciones en Reveal.js con Quarto y GitHub Pages</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1052,8 +1052,8 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Probando presentaciones html con quarto</h1>
-  <p class="subtitle">o algo asi</p>
+  <h1 class="title">Presentaciones en Reveal.js con Quarto y GitHub Pages</h1>
+  <p class="subtitle">y como hacer que se suban solas con GitHub Actions</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1066,86 +1066,58 @@ Jovanny Jara
     </div>
 </div>
 
-  <p class="date">24/12/2025</p>
+  <p class="date">26/12/2025</p>
 </section>
-<section id="una-slide" class="slide level2">
-<h2>Una slide</h2>
-<p>Creo que se ve bien, a ver una lista</p>
+<section id="cuál-es-la-gracia" class="slide level2">
+<h2>¿Cuál es la gracia?</h2>
+<p>Quarto nos deja crear (entre muchas otras cosas) presentaciones como ésta que utilizan <a href="https://revealjs.com">Reveal.js</a> y que se pueden ver desde el navegador sin la necesidad de saber HTML. Solo necesitamos conocer Markdown (y algo de YAML pero en los docs está todo).</p>
+</section>
+<section id="pre-requisitos" class="slide level2">
+<h2>Pre-requisitos</h2>
+<p>El tutorial está pensado para trabajar con la terminal y un editor de texto, aunque hice todo esto con vscode.</p>
+<p>Qué necesitas:</p>
 <ul>
-<li>Un punto</li>
-<li>otro</li>
-<li>otro mas con <strong>énfasis</strong></li>
-<li>se me olvido markdown, creo que esto eran <strong>italicas</strong></li>
-<li>o eran <strong><em>asi</em></strong>?</li>
+<li>Tener instalado <a href="https://quarto.org/docs/get-started/">Quarto</a> en el sistema</li>
+<li>Clonar <a href="https://github.com/jovajara/quarto-presentation-test">este repositorio</a> usando <code>git clone &lt;link del repo&gt;</code> en la terminal (sólo para tener todo a mano)</li>
+<li>Crear un repositorio nuevo en GitHub y clonarlo</li>
 </ul>
-<aside class="notes">
-<p>ya notas pal orador, que deberían pasarse a la otra diapo si las pego, a ver</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
+<p>Si ya tienes un repositorio donde solo quieras incluir una presentación, igualmente crea uno nuevo solo para testear que todo funciona bien y luego haz todo en el tuyo.</p>
 </section>
-<section id="ecuaciones-matemáticas" class="slide level2">
-<h2>Ecuaciones Matemáticas</h2>
-<p>Quarto usa la sintaxis estándar de LaTeX (<code>$..$</code> y <code>$$..$$</code>).</p>
-<p>La ecuación de Schrödinger dependiente del tiempo:</p>
-<p><span class="math display">\[i\hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t)\]</span></p>
-<p>También funciona en línea: Sea <span class="math inline">\(\epsilon &gt; 0\)</span> un número real…</p>
-<p>Y debería funcionar como latex común no? si hago [</p>
-<p>H = _i p_i _i - L(q,,t)</p>
-<p>]</p>
-<p>Y si todo fue bien, tenemos la definición del hamiltoniano arriba.</p>
-<aside class="notes">
-<p>ya notas pal orador, que deberían pasarse a la otra diapo si las pego, a ver yaaa si funconó god</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
+<section id="qué-hacemos" class="slide level2">
+<h2>Qué hacemos</h2>
+<p>Una vez teniendo todo listo, debes hacer lo siguiente</p>
+<ul>
+<li>Copia los contenidos de este repo sin <code>README.md</code> y <code>.nojekyll</code> en la carpeta de tu repo (si ya tienes un <code>.gitignore</code> sólo incluye las líneas de éste)</li>
+<li>Prepara tu repositorio para poder publicar tus presentaciones usando <code>quarto publish gh-pages index.qmd</code> en la terminal, luego <code>y</code> o <code>yes</code>. Esto crea una página con esta presentación en tu repositorio.</li>
+</ul>
 </section>
-<section id="diseño-a-dos-columnas" class="slide level2">
-<h2>Diseño a Dos Columnas</h2>
-<p>Muy útil para poner una imagen/gráfico a un lado y la explicación al otro.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="el-modelo">El Modelo</h3>
-<p>Aquí explicas la teoría.</p>
-<ol type="1">
-<li>Asumimos vacío.</li>
-<li>Métrica de Schwarzschild.</li>
-</ol>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img role="img" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEsCAYAAADtt+XCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAUAklEQVR4nO3dhY8safk24N//1Li7uy4WfHEPFiy4Le7uvhDcF4IvzuKuiy4EWFyfL/d86ZM5PW9N9zzTMz3MXG9yJZs9LVXVNXXXq/V/s9msAGC2R/+36Q0AYPY/SYAAUB0CBIDqECAAVIcAAaA6BAgA1SFAAKgOAQJAdQgQAKpDgABQHQIEgOoQIABUhwABoDoECADVIUAAqA4BAkB1CBAAqkOAAFAdAgSA6hAgAFSHAAGgOgQIANUhQACoDgECQHUIEACqQ4AAUB0CBIDqECAAVIcAAaA6BAgA1SFAAKgOAQJAdQgQAKpDgABQHQIEgOoQIABUhwABoDoECADVIUAAqA4BAkB1CBAAqkOAAFAdAgSA6hAgAFSHAAGgOgQIANUhQACoDgECQHUIEACqQ4AAUB0CBIDqECAAVIcAAaA6BAgA1SFAAKgOAQJAdQgQAKpDgABQHQIEgOoQIABUhwABoDoECADVIUAAqA4BAkB1CBAAqkOAAFAdAgSA6hAgAFSHAAGgOgQIANUhQACoDgECQHUIEACqQ4AAUB0CBIDqECAAVIcAAaA6BAgA1SFAAKgOAQJAdQgQAKpDgABQHQIEgOoQIABUhwABoDoECADVIUAAqA4BAkB1CBAAqkOAAFAdAgSA6hAgAFSHAAGgOgQIANUhQACoDgECQHUIEACqQ4AAUB0CBIDqECAAVIcAAaA6BAgA1SFAAKgOAQJAdQgQAKpDgABQHQIEgOoQIABUhwABoDoECADVIUAAqA4BAkB1CBAAqkOAAFAdAgSA6hAgAFSHAAGgOgQIANUhQACoDgECQHUIEACqQ4AAUB0CBIDqECAAVIcAAaA6BAgA1SFAAKgOAQJAdQgQAKpDgGzY5S53ubriFa+45SIXucjGt+cwXfe6163b3/72dbe73a1uc5vb1GUve9kdr7njHe9Yz3ve8+rxj398XfWqV934NvO/5zrXuU49+clPrmc961l1q1vdauPbMztGBMghn8hnnXVWnXPOOfWTn/yk/vGPf9T28p///Kd+8Ytf1Mc//vF66lOfWje5yU02vs3rlhB45StfWb/61a9O2/f5/t/4xjc+9drXvva1p/37H/7wh63A2fQ+HEWXvOQl6xOf+ER99rOf3eGGN7zhxrdvU+55z3vWX/7yl9POsdyQbHq7ZseEADkE97rXvepzn/tc/fe//629lh/96Edbd98Xv/jFN74f+3X3u999KwR2K9e73vW2XnvnO995+O/nn3/+iaupreKhD33o5DF91atetfHt24T8zVxwwQU7jkdC5Ja3vOXGt292DAiQA65xfOYzn6l1lB/+8Id1i1vcYuP71HXb2952R41rVK5ylatsvf5FL3rR5GtucIMbbHx/jprUNKbK7373u7rEJS6x8W08bPl7mSrPeMYzNr59s2NAgBzg3faFF15Y6yx/+9vf6hGPeMTG922vLnrRi27VpEblz3/+c33rW9+qj33sY/X85z//1Hue9rSnLQ0Z/r/U2pbVbh/4wAdufDs30cc2VR7zmMdsfPtmx4AAOQD3u9/96p///OfSQEhVOneHP/3pT+u3v/1t/fvf/176nrPPPnvj+7dXD3jAA4b7klpG2u5H77nWta61FS6L5SMf+cjG9+eoednLXrb0vPn0pz+98e08KjWz/M25CZmthQBZs4wm+vvf/z75h5wOvde85jVbbfwXu9jFdrw/HedPetKT6mtf+9qO9/7mN7+py1/+8hvfx71629vetmNfzj333KXvO/PMM+vnP//5qbD9wAc+UFe4whU2vj9HSc6hxXb+1Ea2dxzPj1+aVDe9vZsYtPHJT37y1HH4wQ9+sPU3uuntmh0TAmSNLn3pS2/VJqbKu9/97j3d+eQC+s1vfvPUReH+97//xvexYxSGGRiw6vtTGxkN8WW2dU4slu9+97v1/ve/f8f/f/GLX7zx7d2U3Hhc/epX3/h2zI4ZAbJGu3X8vuAFL2j3H9z1rnet293udhvfv66f/exnO45HhldueruOgwz5Ho26etjDHrbj/2fodM6nTW8zs2NDgKxJmpZGbfYp73jHOza+fZGLx9WudrU9DwnO3X9qAZe61KVa3/vrX/96xzFJ7WoTNcR1f+ZlLnOZjf2e17zmNbeaphbLrW99663fLIMuFsu9733vtX1/atMmd85ONAGyJk95ylOG4ZGL50FfZFI72T5x7K1vfetp35nZ3J///OdP9c3M+xNGn5U5FpkZnkl83//+93cMvc1d7Fve8pbTJvwtSkhlsuDcYnt8SppYtr8mXv7yl5/2Oe985zt3TIrLnfUqx+RKV7rSVjNZ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"></p>
-<figcaption>Descripción de la imagen</figcaption>
-</figure>
-</div>
-</div></div>
+<section id="qué-hacemos-1" class="slide level2">
+<h2>Qué hacemos</h2>
+<ul>
+<li>Sube los contenidos a tu repo haciendo</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href></a><span class="co"># añadimos la carpeta .github y los archivos .nojekyll e index.qmd al stage</span></span>
+<span id="cb1-2"><a href></a><span class="fu">git</span> add .</span>
+<span id="cb1-3"><a href></a><span class="co"># hacemos commit de los cambios</span></span>
+<span id="cb1-4"><a href></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Mensaje del commit&quot;</span> <span class="at">-m</span> <span class="st">&quot;Cuerpo del mensaje (opcional)&quot;</span></span>
+<span id="cb1-5"><a href></a><span class="co"># subimos al remoto</span></span>
+<span id="cb1-6"><a href></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si todo sale bien el push debió volver a generar la página con esta presentación mediante una GitHub Action presente en <code>.github/workflows/publish.yml</code>.</p>
+<p>El link debería ser <code>https://tu-usuario.github.io/link-de-tu-repo/</code>, pero tambien puedes abrir la página de tu repo y hacer clic en la tuerca a la derecha de About y luego marcar la opcion “Use your GitHub Pages website” para tenerla siempre a la mano.</p>
 </section>
-<section id="mostrando-código-ccuda" class="slide level2">
-<h2>Mostrando Código (C/CUDA)</h2>
-<p>Como te interesa la física computacional, así se ve el código con resaltado de sintaxis:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb1-1"><a href></a><span class="co">// Ejemplo de kernel CUDA</span></span>
-<span id="cb1-2"><a href></a>__global__ <span class="dt">void</span> saxpy<span class="op">(</span><span class="dt">int</span> n<span class="op">,</span> <span class="dt">float</span> a<span class="op">,</span> <span class="dt">float</span> <span class="op">*</span>x<span class="op">,</span> <span class="dt">float</span> <span class="op">*</span>y<span class="op">)</span></span>
-<span id="cb1-3"><a href></a><span class="op">{</span></span>
-<span id="cb1-4"><a href></a>  <span class="dt">int</span> i <span class="op">=</span> blockIdx<span class="op">.</span>x <span class="op">*</span> blockDim<span class="op">.</span>x <span class="op">+</span> threadIdx<span class="op">.</span>x<span class="op">;</span></span>
-<span id="cb1-5"><a href></a>  <span class="cf">if</span> <span class="op">(</span>i <span class="op">&lt;</span> n<span class="op">)</span> </span>
-<span id="cb1-6"><a href></a>    y<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> a <span class="op">*</span> x<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> y<span class="op">[</span>i<span class="op">];</span></span>
-<span id="cb1-7"><a href></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="ahora-qué" class="slide level2 smaller">
+<h2>Ahora qué</h2>
+<p>Ahora sólo debes editar el archivo <code>index.qmd</code> ya que éste guarda tu presentación.</p>
+<p>Lo importante es editar el cuerpo (desde <code>## ¿Cuál es la gracia?</code> en adelante). Lo que va antes de esto es la cabecera, que configura el título de la presentación y las propiedades de la presentación usando YAML. Puedes saber mas de todo esto mirando los <a href="https://quarto.org/docs/get-started/hello/text-editor.html">tutoriales</a> o la <a href="https://quarto.org/docs/guide/">documentación</a>.</p>
+<p>Si quieres ver como va tu presentación mientras la editas, puedes usar <code>quarto preview ./index.qmd</code>. Esto abrirá una ventana del navegador donde podrás verla y debería actualizarse a tiempo real si haces cambios.</p>
+<p>Si quieres subir estos cambios a tu página, solo debes subirlos a tu repo, de la misma forma que hicimos antes con <code>git add .</code>, etc. Igualmente puedes volver a usar <code>quarto publish gh-pages index.qmd</code> (técnicamente así es mas corto), pero los cambios que hagas a <code>index.qmd</code> no se verán reflejados en el repositorio. Si no te interesa mantener estos cambios puedes no subirlos.</p>
+<p>Una vez que hayas subido los cambios, luego de unos cuántos segundos tu página se actualizará con los cambios que hayas hecho.</p>
+</section>
+<section id="qué-más" class="slide level2">
+<h2>Qué más</h2>
+<p>Quarto es una herramienta muy poderosa, pero por ahora sólo la estamos usando para hacer presentaciones. Incluso hay muchas cosas sobre Reveal.js que no hemos visto. Lo importante es, si es que no sabes mucho de Markdown, partir mirando <a href="https://quarto.org/docs/authoring/markdown-basics.html">lo básico de Markdown en Quarto</a> y luego <a href="https://quarto.org/docs/presentations/revealjs/">lo básico de reveal.js</a>.</p>
+<p>Luego puedes ver otras cosas como <a href="https://quarto.org/docs/presentations/revealjs/themes.html">temas</a> o <a href="https://quarto.org/docs/presentations/revealjs/advanced.html">cosas más avanzadas</a>.</p>
+<p>Espero que te haya servido.</p>
 
 </section>
     </div>
@@ -2138,7 +2110,7 @@ window.QuartoSupport = function () {
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -2149,7 +2121,7 @@ window.QuartoSupport = function () {
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
